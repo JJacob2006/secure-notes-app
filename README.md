@@ -6,7 +6,7 @@ Developed by **John (BE CSE - Full Stack Development)** as part of academic lear
 
 ---
 
-## 🚀 Features
+## Features
 
 - User Authentication (Register/Login)
 - Secure password storage using bcrypt
@@ -18,7 +18,7 @@ Developed by **John (BE CSE - Full Stack Development)** as part of academic lear
 
 ---
 
-## 🔒 Security Highlights
+## Security Highlights
 
 - Passwords are hashed (not stored in plain text)
 - Notes are encrypted before storing in database
@@ -29,7 +29,7 @@ Developed by **John (BE CSE - Full Stack Development)** as part of academic lear
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: HTML, CSS, EJS
 - **Backend**: Node.js, Express.js
@@ -39,18 +39,21 @@ Developed by **John (BE CSE - Full Stack Development)** as part of academic lear
 ---
 
 ## 📁 Project Structure
+```
 secure-notes-app/
-├── controllers/ # Business logic
-├── routes/ # Route handling
-├── db/ # Database connection & schema
-├── utils/ # Encryption utilities
-├── views/ # EJS templates
-├── public/ # CSS, images
-├── app.js # Main server file
-
+│
+├── controllers/ → Business logic
+├── routes/ → Route handling
+├── db/ → Database & schema
+├── utils/ → Encryption functions
+├── views/ → EJS templates
+├── public/ → CSS & images
+│
+└── app.js → Main server file
+```
 ---
 
-## 💡 How It Works
+## How It Works
 
 1. User registers and logs in
 2. Password is hashed using bcrypt
@@ -60,7 +63,7 @@ secure-notes-app/
 
 ---
 
-## 🎯 Learning Outcomes
+## Learning Outcomes
 
 - Understanding of authentication systems
 - Implementation of encryption in real applications
