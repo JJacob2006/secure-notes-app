@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Note - Secure Notes</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <h2>Secure Notes</h2>
+    <div class="nav-links">
+      <span>Welcome, <strong><%= username %></strong></span>
+      <a href="/auth/logout" class="logout-btn">Logout</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="form-card">
+      <h3>Add New Note</h3>
+
+      <!-- Display validation errors if any -->
+      <% if (errors && errors.length > 0) { %>
+        <div class="error">
+          <ul>
+            <% errors.forEach(error => { %>
+              <li><%= error.msg %></li>
+            <% }); %>
+          </ul>
+        </div>
+      <% } %>
+    <div class="form-box">
+      <form action="/notes/add" method="POST">
+        <div class="form-group">
+          <label for="note">Note Content</label>
+          <textarea id="note" name="note" required maxlength="5000" placeholder="Write your secure note here... (max 5000 characters)"></textarea>
+          <div class="char-count">
+            <span id="charCount">0</span> / 5000 characters
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button type="submit" class="submit-btn">Save Note</button>
+          <a href="/dashboard" class="cancel-btn">Cancel</a>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+
+  <script nonce="<%= nonce %>">
+    const textarea = document.getElementById('note');
+    const charCount = document.getElementById('charCount');
+
+    // Update character count on input
+    textarea.addEventListener('input', function() {
+      charCount.textContent = this.value.length;
+    });
+
+    // Initialize counter on page load
+    window.addEventListener('load', function() {
+      charCount.textContent = textarea.value.length;
+    });
+  </script>
+</body>
+</html>

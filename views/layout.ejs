@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== 'undefined' ? title : 'Secure Notes' %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<script>
+  document.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 10;
+    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+
+    document.body.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+  });
+</script>
+<body>
+  <!-- Template content will be inserted by individual pages -->
+</body>
+</html>
